@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Rubik Dirt', cursive;
+            letter-spacing: 2px;
+            word-spacing: 4px;
+        }
+
+        body {
+            {#background-color: rgb(167, 177, 218);#}
+            background-image: radial-gradient(#ffdd76 2%, #002a54 40%, #6e0080 80%);
+
+
+        }
+
+        #par {
+            width: 50vw;
+            height: 50vh;
+            background-image: linear-gradient(to top right, red,green,blue,indigo);
+            margin: 20vh auto;
+            padding: 30px;
+            border: 5px ridge white;
+            filter: drop-shadow(0 0 1rem rgb(255, 150, 13));
+            border-radius: 1rem;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: space-evenly;
+            align-items: center;
+            box-shadow: 0px 0px 5px red;
+        }
+
+        .input {
+            font-size: 25px;
+            width: fit-content;
+            color: rgb(0, 15, 56);
+        }
+
+        input[type='text'],
+        input[type='submit'],
+        #ans {
+            font-size: 25px;
+            text-align: center;
+            padding: 20px;
+            background-color: rgb(255, 252, 226);
+            border-radius: 0.75rem;
+
+        }
+
+        input[type='submit'] {
+            padding: 10px;
+            cursor: pointer;
+            color: #b2ffb7;
+            border-radius:unset;
+            background-color: rgb(0, 25, 54);
+            filter: drop-shadow(0 0 0.5rem rgb(246, 167, 0))
+        }
+        #ans{
+            background-color: transparent;
+            color: #000000;
+            font-weight: bolder;
+            overflow: auto;
+            word-break: break-word;
+            filter: drop-shadow(0 0 0.5rem rgb(255, 255, 255));
+
+        }
+        input[type='submit']:hover{
+            background-color: #340606;
+            color: #ffffcc;
+        }
+        input[type='submit']:active{
+            background-color: #000000;
+            color: white;
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="par" action="" method="post">
+        {% csrf_token %}
+        <div id="ph" class="input"><input type="text" name="num" placeholder="Enter Number"></div>
+        <div class="input"><input type="submit" name="btnsumbit" value="Factoarial"></div>
+        <div class="input" id="ans">{{ key }}</div>
+        <!-- <div class="input" id="ans">Number should be greater than 0</div> -->
+    </form>
+</body>
+
+</html>

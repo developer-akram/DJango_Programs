@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Marksheet</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Rubik&family=Signika+Negative&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Fredoka One', cursive;
+            font-family: 'Rubik', sans-serif;
+            font-family: 'Signika Negative', sans-serif;
+
+        }
+
+        body {
+            overflow: auto required;
+            word-break: break-word;
+            background-color: rgb(0, 0, 0);
+        }
+
+        #par {
+            width: 50vw;
+            height: fit-content;
+            margin: 10vh auto;
+            padding: 20px;
+            border: 10px ridge rgb(202, 0, 0);
+            filter: drop-shadow(0 0 8rem rgb(136, 3, 3));
+            border-radius: 1rem;
+            display: flex;
+            background-image: linear-gradient(to bottom right, #ff2c2c 20%, #002a54 50%, #6e0080 80%);
+            flex-flow: column nowrap;
+            gap: 20px;
+            /* justify-content: space-evenly; */
+            align-items: center;
+            box-shadow: 0px 0px 70px 15px rgb(255, 229, 111);
+            background-color: rgb(66, 66, 66);
+        }
+
+        .input {
+            font-size: 25px;
+            width: fit-content;
+            color: rgb(0, 15, 56);
+        }
+
+        input[type='text'],
+        input[type='submit'],
+        #ans {
+            font-size: 25px;
+            text-align: center;
+            padding: 20px;
+            background-color: rgb(255, 252, 226);
+            border-radius: 0.75rem;
+
+        }
+
+        input[type='submit'] {
+            padding: 10px;
+            cursor: pointer;
+            color: white;
+            border-radius: unset;
+            background-color: red;
+            filter: drop-shadow(0 0 0.5rem rgb(132, 255, 158))
+        }
+
+        input[type='submit']:hover {
+            background-color: #000f2d;
+            color: white;
+            box-shadow: 0px 0px 5px 3px rgb(165, 255, 224);
+        }
+
+        input[type='submit']:active {
+            background-color: #ff0059;
+            color: #cffff9;
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="par" action="" method="get">
+        <!-- {% csrf_token %} -->
+        <div class="input"><input type="text" name="name" placeholder="STUDENT NAME" required></div>
+        <div class="input"><input type="text" name="sub1" placeholder="First Subject Mark" required></div>
+        <div class="input"><input type="text" name="sub2" placeholder="Second Subject Mark" required></div>
+        <div class="input"><input type="text" name="sub3" placeholder="Third Subject Mark" required></div>
+        <div class="input"><input type="text" name="sub4" placeholder="Forth Subject Mark" required></div>
+        <div class="input"><input type="text" name="sub5" placeholder="Fifth Subject Mark" required></div>
+        <div class="input"><input type="submit" name="btnsumbit" value="Submit"></div>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bitter&family=Hind:wght@300&family=Roboto+Mono:ital,wght@0,400;1,300&family=Signika+Negative:wght@300&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="title">
+        <h1>This is page 3</h1>
+    </div>
+    <form action="rev">
+        <div class="in"><input type="text" name="name3"placeholder="Enter Last Name"></div>
+        <div class="in"><input type="submit" value="Click HERE"></div>
+        <div class="in"><input type="text" name="name" value="{{key}}" readonly></div>
+    </form>
+</body>
+
+</html>
