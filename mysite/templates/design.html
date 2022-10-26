@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Akram Site</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+  <!-- For icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="/static/css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+  <header class="container-fluid bg-dark text-white">
+    <div id="hd-first-row" class="row justify-content-evenly">
+      <div class="col-md-8">
+        <div class="row justify-content-evenly">
+          <div class="col-md-3 pt-1 pb-1">
+            <a href="faq">HAVE ANY QUESTION<i class="bi bi-question-circle-fill ms-1 text-dark"></i></a>
+          </div>
+          <div class="col-md-4 pt-1 pb-1">
+            <i class="bi bi-telephone-fill text-info" style="font-size: 13px;"></i>
+            0731-4069788 , 078050-63968
+          </div>
+          <div class="col-md-4 pt-1 pb-1">
+            <i class="bi bi-envelope-fill text-light" style="font-size: 13px;"></i>
+            shivaconceptsolution@gmail.com
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="row justify-content-evenly">
+          <div class="col-3 pt-1 pb-1">
+            <a href="">LOGIN</a>
+          </div>
+          <div class="col-3 pt-1 pb-1">
+            <a href="">REGISTER</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav id="hd-second-row" class="row navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand  ms-lg-5" href="/mysite"><img src="/static/images/logo.png" class="img-fluid"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active ms-lg-5 mt-lg-4 me-lg-5" aria-current="page" href="/mysite">
+                <p class="h5">Home</p>
+              </a></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active mt-lg-4 me-lg-5" aria-current="page" href="about">
+                <p class="h5">About US</p>
+              </a></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active mt-lg-4 me-lg-5" aria-current="page" href="courses">
+                <p class="h5">Courses</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active mt-lg-4 me-lg-5" aria-current="page" href="contact">
+                <p class="h5">Contact US</p>
+              </a></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active mt-lg-4 me-lg-5" aria-current="page" href="faq">
+                <p class="h5">FAQ</p>
+              </a></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active mt-lg-4 me-lg-5" aria-current="page" href="#">
+                <p class="h5"><i class="bi bi-cart-fill text-primary"></i><span id="cart-value"></span></p>
+              </a></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <section class="container">
+    {% block middle %}
+
+    {% endblock %}
+  </section>
+
+  <footer class="container-fluid navbar-light bg-light">
+    <div class="row justify-content-evenly ps-5 pe-5 pb-5">
+      <div class="col-lg-4  pt-5">
+        <div class="col-12 pb-5"><a href="/mysite"><img src="/static/images/logo_footer.png" class="img-fluid"></a>
+        </div>
+        <div class="col-12" id="text-footer">
+          SHIVA CONCEPT DIGITAL is the best e-learning platform for learners, we are providing online certification
+          courses to learn programs through video tutorials, articles, programs, live projects, and interview questions.
+        </div>
+        <div class="col-12 mt-5" id="icons-footer">
+          <a href="https://www.youtube.com/c/ShivaConceptSolution">
+            <i class="bi bi-youtube text-danger"></i>
+          </a>
+          <a href="https://www.facebook.com/shivaconceptsolutionindore/">
+            <i class="bi bi-facebook"></i>
+          </a>
+          <a href="https://www.instagram.com/shivaconceptsolution">
+            <i class="bi bi-instagram text-warning"></i>
+          </a>
+          <a href="https://twitter.com/shivagtm">
+            <i class="bi bi-twitter"></i>
+          </a>
+          <a href="https://github.com/shivaconceptsolution">
+            <i class="bi bi-github text-dark"></i>
+          </a>
+          <a href="https://wa.me/916294500204">
+            <i class="bi bi-whatsapp text-info"></i>
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-2  pt-5" id="qm">
+        <div class="col-12 pb-5">
+          <h5 class="h4"><strong>Quick menu</strong></h5>
+        </div>
+        <div class="col-12 mb-2">
+          <a href="/mysite">Home</a>
+        </div>
+        <div class="col-12 mb-2">
+          <a href="about">About US</a>
+        </div>
+        <div class="col-12 mb-2">
+          <a href="contact">Contact</a>
+        </div>
+        <div class="col-12 mb-2">
+          <a href="terms">Terms & Conditions</a>
+        </div>
+      </div>
+      <div class="col-lg-2 pt-5">
+        <div class="col-12 pb-5">
+          <h5 class="h4"><strong>Contact US</strong></h5>
+        </div>
+        <div class="col-12 text-danger">
+          Address :
+        </div>
+        <div class="col-12" style="text-align: justify;">
+          M6 First Floor, Kanchan Sagar Near Industry House Palasia, Indore
+        </div>
+        <div class="col-12 mt-3 text-danger">
+          Phone :
+        </div>
+        <div class="col-12">
+          0731-4069788, 078050-63968
+        </div>
+        <div class="col-12 mt-3 text-danger">
+          Email :
+        </div>
+        <div class="col-12">
+          shivaconceptsolution@gmail.com
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

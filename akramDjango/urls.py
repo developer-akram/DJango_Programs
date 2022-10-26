@@ -27,4 +27,5 @@ urlpatterns = [
     path('hello/', include('hello.urls')),
     path('marksheet/', include('marksheet.urls')),
     path('pagechange/', include('pagechange.urls')),
+    path('mysite/', include('mysite.urls')),
 ]

@@ -1,0 +1,96 @@
+#hd-first-row{
+    text-align: center;
+    padding: 20px;
+}
+#hd-first-row a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    padding: 5px 8px;
+    background-color: #fff;
+    border-radius: 0.3rem;
+}
+#hd-first-row a:hover{
+    background-color: rgb(255, 0, 0);
+    color: white;
+}
+*{
+    /* border: 1px solid red; */
+}
+#hd-second-row .nav-link{
+    /* margin-right:60px; */
+    text-transform: uppercase;
+}
+#hd-second-row{
+    position: sticky;
+    top: 20px;
+    background-color: rgb(255, 255, 255) !important;
+}
+#hd-second-row .h5:hover{
+    color: rgb(255, 0, 0);
+    font-weight: bold;
+}
+#hd-second-row i:hover{
+    font-size: 1.3rem;
+}
+#text-footer{
+    text-align: justify;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 2rem;
+}
+#icons-footer a{
+    text-decoration: none;
+    margin: 1rem;
+}
+#icons-footer i{
+    font-size: 1.4rem;
+}
+#qm a{
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: black;
+}
+#qm a:hover{
+    color: red;
+}
+.accordion .accordion-button{
+    background-image: linear-gradient(rgb(252, 255, 217),rgb(178, 226, 255),rgb(252, 255, 217));;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.accordion .accordion-collapse{
+    font-size: 1.3rem;
+    text-align:justify;
+}
+#faq{
+    font-size:2.2rem;
+    color: red;
+}
+#contact-submit{
+    border-radius: 1.2rem;
+    box-shadow: 0px 0px 50px 1px rgb(157, 157, 157);
+    background-image: linear-gradient(to right bottom,rgb(255, 167, 167),rgb(166, 255, 166),rgb(201, 147, 255));
+}
+#contact-submit input,#contact-submit textarea{
+    font-size: 1.5rem;
+}
+#contact-submit input:hover,#contact-submit textarea:hover{
+    box-shadow: 0px 0px 2px 5px rgb(33, 33, 33);
+}
+#contact-submit input[type="submit"]:hover{
+    background-color: rgb(255, 0, 0);
+}
+#contact-submit input[type="submit"]:active{
+    background-color: rgb(0, 0, 0);
+    font-style: italic;
+}
+#about .h1{
+    color: rgb(0, 26, 255);
+    font-weight: bold;
+    text-transform: capitalize;
+}
+#about .about-text{
+    text-align:justify;
+    font-weight: 600;
+}
