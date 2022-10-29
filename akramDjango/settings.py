@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'add', 'sub', 'mul', 'div',
     'fact','fibo','marksheet',
     'hello','pagechange',
-    'mysite',
+    'mysite','siteone','sitetwo',
+    'sitethree',
 ]
 
 MIDDLEWARE = [
