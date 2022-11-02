@@ -1,6 +1,74 @@
-{% extends 'design.html' %}
-{% block middle %}
-<div>
-    <h1>This is Courses PAGE</h1>
+{% extends 'design.html' %} {% block middle %}
+<div class="row p-5 " style="background-image:linear-gradient(to right bottom,rgb(251, 145, 255),rgb(137, 255, 210),rgb(255, 175, 175));border-radius: 2rem ;">
+    <div class="col-sm-6">
+        <form action="" method="post" class="row mb-5">
+            {% csrf_token %}
+            <div class="col-12 mb-3">
+                <label for="name" class="form-label">Your Name</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your Name" />
+            </div>
+            <div class="col-12 mb-3">
+                <div class="col-12">Gender</div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gender" id="male" value="Male">
+                    <label class="form-check-label" for="male">
+                        Male
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gender" id="female" value="Female">
+                    <label class="form-check-label" for="female">
+                        Female
+                    </label>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="col-12 mb-1">Select Courses</div>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="java" name="course" value="Java">
+                    <label class="form-check-label" for="java">Java</label>
+                </div>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="python" name="course" value="Python">
+                    <label class="form-check-label" for="python">Python</label>
+                </div>
+                <div class="form-check form-switch mb-3">
+                    <input class="form-check-input" type="checkbox" id="android" name="course" value="Android">
+                    <label class="form-check-label" for="android">Android</label>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="col-12 mb-2">Country</div>
+                <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example" name="country">
+                    <option selected>Select a Country HERE</option>
+                    <option value="India">India</option>
+                    <option value="Usa">Usa</option>
+                    <option value="London">London</option>
+                </select>
+                <div class="col-12 mb-2">State</div>
+                <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example" name="state"
+                    multiple>
+                    <option selected class="text-center">Select State HERE</option>
+                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                    <option value="West Bengal">West Bengal</option>
+                    <option value="Mumbai">Mumbai</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Meassage</label>
+                <textarea class="form-control" id="message" rows="6" name="message" style="resize: none;"></textarea>
+            </div>
+            <div class="row justify-content-center">
+                <button type="submit" class="col-4 btn btn-outline-primary btn-lg" name="btn">Submit Here</button>
+            </div>
+
+        </form>
+    </div>
+    <div class="col-sm-6 ps-5 pt-5">
+        {% for left,right in key.items %}
+        <div class="h2" style="word-wrap:break-word; margin-bottom:1rem ;">{{left}}{{right}}</div>
+        {% endfor %}
+    </div>
 </div>
 {% endblock %}

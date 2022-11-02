@@ -13,5 +13,19 @@ def contact(request):
     return render(request, 'contact.html')
 
 def courses(request):
+    if request.method == 'POST':
+        name = request.POST['name']
+        gender = request.POST['gender']
+        course = request.POST.getlist('course')
+        courses = ''
+        for i in course:
+            courses = i + ' ' + courses
+        country = request.POST['country']
+        state = request.POST.getlist('state')
+        states = ''
+        for i in state:
+            states = i + ' ' + states
+        message = request.POST['message']
+        return render(request, 'courses.html',{'key':{'Name : ':name, 'Gender : ':gender, 'Selected Courses : ':courses, 'Country : ':country, 'State : ':states, 'Message : ':message}})
     return render(request, 'courses.html')
 # Create your views here.

@@ -31,4 +31,5 @@ urlpatterns = [
     path('siteone/', include('siteone.urls')),
     path('sitetwo/', include('sitetwo.urls')),
     path('sitethree/', include('sitethree.urls')),
+    path('mical/', include('mical.urls')),
 ]
