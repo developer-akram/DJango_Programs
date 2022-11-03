@@ -14,7 +14,9 @@ def contact(request):
 
 def courses(request):
     if request.method == 'POST':
-        name = request.POST['name']
+        fname = request.POST['fname']
+        lname = request.POST['lname']
+        name = f"{fname} {lname}"
         gender = request.POST['gender']
         course = request.POST.getlist('course')
         courses = ''

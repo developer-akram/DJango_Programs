@@ -1,12 +1,17 @@
 {% extends 'design.html' %} {% block middle %}
+<script src="/static/js/valid.js"></script>
 <div class="row p-5 " style="background-image:linear-gradient(to right bottom,rgb(251, 145, 255),rgb(137, 255, 210),rgb(255, 175, 175));border-radius: 2rem ;">
     <div class="col-sm-6">
         <form action="" method="post" class="row mb-5">
             {% csrf_token %}
-            <div class="col-12 mb-3">
-                <label for="name" class="form-label">Your Name</label>
-                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your Name" />
-            </div>
+            <div class="row">
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="First name" aria-label="First name" id="fname" name="fname">
+                </div>
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="Last name" aria-label="Last name" id="lname" name="lname">
+                </div>
+              </div>
             <div class="col-12 mb-3">
                 <div class="col-12">Gender</div>
                 <div class="form-check">
@@ -60,7 +65,7 @@
                 <textarea class="form-control" id="message" rows="6" name="message" style="resize: none;"></textarea>
             </div>
             <div class="row justify-content-center">
-                <button type="submit" class="col-4 btn btn-outline-primary btn-lg" name="btn">Submit Here</button>
+                <input type="submit" value="Click HERE" class="col-4 btn btn-outline-primary btn-lg" name="btn" id="btn" onclick="return valid()">
             </div>
 
         </form>
