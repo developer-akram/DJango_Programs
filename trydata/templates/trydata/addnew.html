@@ -1,5 +1,37 @@
 {% extends 'trydata/layout.html' %}
 {% block body %}
 
+<form action="" method="post" class="container">
+    {% csrf_token %}
+    <table class="row">
+        <caption class="display-6 text-center mt-3 mb-5 col-12">Student Data Filing Form</caption>
+        <tr class="row justify-content-center">
+            <th class="col-3">Student Roll</th>
+            <td class="col-5"><input type="text" name="sroll"></td>
+        </tr>
+        <tr class="row justify-content-center">
+            <th class="col-3">Student Name</th>
+            <td class="col-5"><input type="text" name="sname"></td>
+        </tr>
+        <tr class="row justify-content-center">
+            <th class="col-3">Student Branch</th>
+            <td class="col-5"><input type="text" name="sbranch"></td>
+        </tr>
+        <tr class="row justify-content-center">
+            <th class="col-3">Student Fees</th>
+            <td class="col-5"><input type="text" name="sfees"></td>
+        </tr>
+        <tr class="row justify-content-center">
+            <td colspan="2"><input  class="col" type="submit" value="Submit Here"></td>
+        </tr>
+    </table>
+</form>
+<div class="container">
+    <div class="row mt-5 mb-5">
+        <div class="col-12 text-center display-6 text-danger">
+            {{save}}
+        </div>
+    </div>
+</div>
 
 {% endblock %}

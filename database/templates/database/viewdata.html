@@ -1,7 +1,7 @@
 {% extends 'database/design.html' %}
 {% block middle %}
 <div class="container p-5">
-    <table class="table table-striped" style="font-variant: small-caps;font-size: 1.5rem;">
+    <table class="table table-striped" style="font-variant: small-caps;font-size: 1.3rem;">
         <thead class="table-dark">
           <tr>
             <th scope="col">Roll</th>
@@ -19,11 +19,16 @@
             <td>{{i.name}}</td>
             <td>{{i.branch}}</td>
             <td>{{i.fees}}</td>
-            <td><a href="update?q={{i.id}}" style="text-decoration: none; color:rgb(255, 0, 0);">Edit</a></td>
-            <td><a href="deletedata?q={{i.id}}" style="text-decoration: none; color:rgb(255, 0, 0);">Edit</a></td>
+            <td style="white-space: pre;"><a href="update?q={{i.id}}" style="text-decoration: none; color:rgb(255, 0, 0);">Edit</a>    <a href="deleteData?q={{i.id}}" style="text-decoration: none; color:rgb(255, 0, 0);">Delete</a></td>
+            <td></td>
           </tr>
           {% endfor %}
         </tbody>
       </table>
+      <div class="row">
+        <div class="d-grid gap-2 col-3 mx-auto m-5">
+          <a class="btn btn-primary" href="registration">ADD NEW RECORD</a>
+        </div>
+      </div>
 </div>
 {% endblock %}

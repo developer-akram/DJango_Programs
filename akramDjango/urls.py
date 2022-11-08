@@ -35,4 +35,5 @@ urlpatterns = [
     path('database/', include('database.urls')),
     path('website/', include('website.urls')),
     path('trydata/', include('trydata.urls')),
+    path('psite/', include('psite.urls')),
 ]

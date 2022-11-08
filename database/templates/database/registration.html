@@ -13,20 +13,20 @@
         </thead>
         <tbody>
             <tr style="text-transform: uppercase;">
-                <th scope="row"><input type="text" name="rno" placeholder="Enter roll" style="width:10rem ;"></th>
-                <td><input type="text" name="name" placeholder="Enter name" style="width:15rem ;"></td>
-                <td><input type="text" name="branch" placeholder="Enter branch" style="width:10rem ;"></td>
-                <td><input type="text" name="fees" placeholder="Enter fees" style="width:10rem ;"></td>
+                <th scope="row"><input type="text" name="rno" placeholder="Enter roll" style="width:15rem ;" required></th>
+                <td><input type="text" name="name" placeholder="Enter name" style="width:20rem ;" required></td>
+                <td><input type="text" name="branch" placeholder="Enter branch" style="width:20rem ;" required></td>
+                <td><input type="text" name="fees" placeholder="Enter fees" style="width:10rem ;" required></td>
             </tr>
         </tbody>
     </table>
-    <div class="d-grid gap-2 col-3 mx-auto m-5">
-        <input class="btn btn-outline-primary" type="submit" name="btn" value="ADD STUDENT DATA">
-    </div>
+    <div class="row justify-content-evenly mt-5">
+    <input type="submit" class="btn btn-primary btn-lg col-4" value="ADD RECORD HERE">
+<a class="btn btn-danger btn-lg col-4" href="viewdata">VIEW ALL RECORDS</a></div>
 </form>
 <div class="container">
     <div class="row">
-        <div class="col-12 text-center text-success display-6">
+        <div class="col-12 text-center text-success display-6 mt-4">
             {{key}}
         </div>
     </div>

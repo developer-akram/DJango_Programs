@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'hello','pagechange',
     'mysite','siteone','sitetwo',
     'sitethree','mical','database',
-    'website','trydata',
+    'website','trydata','psite',
 ]
 
 MIDDLEWARE = [

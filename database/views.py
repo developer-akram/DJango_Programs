@@ -17,6 +17,10 @@ def update(request):
         return redirect('viewdata')
     return render(request, 'database/update.html',{'student':data})
 
+def deleteData(request):
+    data = StudentNew.objects.get(pk=request.GET["q"])
+    data.delete()
+    return redirect('viewdata')
 def viewdata(request):
     data = StudentNew.objects.all()
     return render(request, 'database/viewdata.html',{'viewData':data})
