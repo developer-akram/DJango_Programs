@@ -23,6 +23,7 @@ def deletedata(request):
     x = MyStudent.objects.get(pk = request.GET['q'])
     x.delete()
     return redirect('showdata')
+    
 def updatedata(request):
     data = MyStudent.objects.get(pk = request.GET['q'])
     if request.method == 'POST':
