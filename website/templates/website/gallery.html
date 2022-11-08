@@ -1,0 +1,11 @@
+{% extends 'website/layout.html' %}
+{% block middle %}
+<p>Welcome in Student Information</p>
+<table border="1">
+    <tr><th>RNO</th><th>NAME</th><th>BRANCH</th><th>FEES</th></tr>
+{% for stux in res   %}
+   <tr><td>{{stux.rno}}</td> <td>{{stux.name}}</td> <td>{{stux.branch}}</td> 
+    <td>{{stux.fees}}</td><td><a href="findstu?q={{stux.id}}">Edit</a></td></tr>
+{% endfor %}
+</table>
+{% endblock %}

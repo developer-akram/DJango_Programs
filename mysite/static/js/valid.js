@@ -5,13 +5,14 @@ function valid() {
     let email = document.getElementById("email").value;
     let atpos = email.indexOf('@');
     let dotpos = email.lastIndexOf('.');
-    let state = document.getElementById('state').value;
+    let country = document.getElementBy.value;
+    console.log(country);
     let gender = document.querySelector('input[name="gender"]:checked');
-    let city = document.getElementById('city').value;
     let mob = document.getElementById('mob').value;
     mob = String(Number(mob));
-    let cbx = document.querySelectorAll('input[name="tech"]:checked');
-    let qua = document.getElementById('qualification').value;
+    let course = document.querySelectorAll('input[name="course"]:checked');
+    // let state = document.frm.state.value;
+    // let msg = document.getElementById('message').value;
     if (fname.length == 0) {
         alert("First Name cannot Empty");
         return false;
@@ -19,16 +20,18 @@ function valid() {
         alert("Name Should be in Alphabets only");
         return false;
     }
-    if (lname.length == 0) {
+    else if (lname.length == 0) {
         alert(" Last Name cannot Empty");
         return false;
     } else if (!a2z.test(lname)) {
         alert("Name Should be in Alphabets only");
         return false;
-    } else if (gender == null) {
+    }
+    else if (gender == null) {
         alert("Select Your Gender");
         return false;
-    } else if (
+    }
+    else if (
         email.length == 0 ||
         !a2z.test(email[0]) ||
         !a2z.test(email[email.length - 1]) ||
@@ -38,8 +41,7 @@ function valid() {
         alert("Invalid format Email");
         return false;
     }
-    else if (isNaN(mob))
-    {
+    else if (isNaN(mob)) {
         alert("Only Numbers can be Acceptable");
         return false;
     }
@@ -47,22 +49,22 @@ function valid() {
         alert("Number Should be 10 digits");
         return false;
     }
-    else if (state == 'none') {
-        alert("Select State");
+    else if (course.length == 0) {
+        alert('Select at least one Course');
         return false;
     }
-    else if (city == 'none') {
-        alert("Select City");
-        return false;
-    }
-    else if (qua == 'none') {
-        alert("Select Qualification");
-        return false;
-    }
-    else if (cbx.length == 0) {
-        alert("Select At least one Technology");
-        return false;
-    }
+    // else if (country == 'none') {
+    //     alert("Select Country");
+    //     return false;
+    // }
+    // else if (state == 'none') {
+    //     alert("Select City");
+    //     return false;
+    // }
+    // else if (msg.length <= 50) {
+    //     alert("Message contains at least 50 alphabets");
+    //     return false;
+    // }
     else {
         alert("Success!");
         return true;

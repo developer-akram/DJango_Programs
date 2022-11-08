@@ -32,4 +32,7 @@ urlpatterns = [
     path('sitetwo/', include('sitetwo.urls')),
     path('sitethree/', include('sitethree.urls')),
     path('mical/', include('mical.urls')),
+    path('database/', include('database.urls')),
+    path('website/', include('website.urls')),
+    path('trydata/', include('trydata.urls')),
 ]

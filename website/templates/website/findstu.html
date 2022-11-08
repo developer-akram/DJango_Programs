@@ -1,0 +1,16 @@
+{% extends 'website/layout.html' %}
+{% block middle %}
+<p>Welcome in Student Information</p>
+<form action="" method="post">
+    {% csrf_token %}
+    <table >
+    <tr><td>RNO </td><td><input type="text" value="{{stu.rno}}" name="txtrno" /></td></tr>
+    <tr><td>Name </td><td><input type="text" value="{{stu.name}}" name="txtname" /></td> </tr>
+    <tr><td>Branch </td><td><input type="text" value="{{stu.branch}}" name="txtbranch" /></td> </tr>
+    <tr><td>Fees </td> <td><input type="text" value="{{stu.fees}}" name="txtfees" /></td></tr>
+    <tr><td colspan="2" align="right"><input type="submit" value="Update" /> </td></tr>
+
+</table>
+</form>
+
+{% endblock %}

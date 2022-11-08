@@ -1,0 +1,29 @@
+{% extends 'database/design.html' %}
+{% block middle %}
+<div class="container p-5">
+    <table class="table table-striped" style="font-variant: small-caps;font-size: 1.5rem;">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">Roll</th>
+            <th scope="col">Name</th>
+            <th scope="col">Branch</th>
+            <th scope="col">Fees</th>
+            <th scope="col">Update</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for i in viewData %}
+          <tr style="text-transform: uppercase
+          ;">
+            <th scope="row">{{i.rno}}</th>
+            <td>{{i.name}}</td>
+            <td>{{i.branch}}</td>
+            <td>{{i.fees}}</td>
+            <td><a href="update?q={{i.id}}" style="text-decoration: none; color:rgb(255, 0, 0);">Edit</a></td>
+            <td><a href="deletedata?q={{i.id}}" style="text-decoration: none; color:rgb(255, 0, 0);">Edit</a></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+</div>
+{% endblock %}

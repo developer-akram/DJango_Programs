@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+
+    <!-- For icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="/static/styletrydata.css">
+
+</head>
+
+<body>
+    <header class="navbar navbar-expand-sm navbar-light header-nav">
+        <div class="container-fluid">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/trydata"><img src="/static/images/akram.gif"
+                            class="img-fuild"></a>
+                </li>
+                <li class="nav-item mt-0 mt-lg-4 ms-lg-5">
+                    <a class="nav-link bg-info p-3 text-dark hover rounded-start" href="addnew">Add Student Record</a>
+                </li>
+                <li class="nav-item mt-0 mt-lg-4">
+                    <a class="nav-link bg-info p-3 text-dark hover rounded-end" href="showdata">View Records</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <main class="container pt-5 pb-5">
+        {% block body %}
+        {% endblock %}
+    </main>
+    <!-- Remove the container if you want to extend the Footer to full width. -->
+
+    <footer class="text-center text-white" style="background-color: #3f51b5">
+        <!-- Grid container -->
+        <div class="container">
+            <!-- Section: Links -->
+            <section class="mt-5">
+                <!-- Grid row-->
+                <div class="row text-center d-flex justify-content-center pt-5">
+                    <!-- Grid column -->
+                    <div class="col-md-2">
+                        <h6 class="text-uppercase font-weight-bold">
+                            <a href="#!" class="text-white">About us</a>
+                        </h6>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-2">
+                        <h6 class="text-uppercase font-weight-bold">
+                            <a href="#!" class="text-white">Products</a>
+                        </h6>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-2">
+                        <h6 class="text-uppercase font-weight-bold">
+                            <a href="#!" class="text-white">Awards</a>
+                        </h6>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-2">
+                        <h6 class="text-uppercase font-weight-bold">
+                            <a href="#!" class="text-white">Help</a>
+                        </h6>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-2">
+                        <h6 class="text-uppercase font-weight-bold">
+                            <a href="#!" class="text-white">Contact</a>
+                        </h6>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row-->
+            </section>
+            <!-- Section: Links -->
+
+            <hr class="my-5" />
+
+            <!-- Section: Text -->
+            <section class="mb-5">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-lg-8">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
+                            distinctio earum repellat quaerat voluptatibus placeat nam,
+                            commodi optio pariatur est quia magnam eum harum corrupti
+                            dicta, aliquam sequi voluptate quas.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <!-- Section: Text -->
+
+            <!-- Section: Social -->
+            <section class="text-center mb-5">
+                <a href="" class="text-white me-4">
+                    <i class="bi bi-facebook-f"></i>
+                </a>
+                <a href="" class="text-white me-4">
+                    <i class="bi bi-twitter"></i>
+                </a>
+                <a href="" class="text-white me-4">
+                    <i class="bi bi-google"></i>
+                </a>
+                <a href="" class="text-white me-4">
+                    <i class="bi bi-instagram"></i>
+                </a>
+                <a href="" class="text-white me-4">
+                    <i class="bi bi-linkedin"></i>
+                </a>
+                <a href="" class="text-white me-4">
+                    <i class="bi bi-github"></i>
+                </a>
+            </section>
+            <!-- Section: Social -->
+        </div>
+        <!-- Grid container -->
+
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+            © 2022 Copyright:
+            <a class="text-white" href="https://github.com/developer-akram">Developer-Akram</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+
+
+</body>
+
+</html>

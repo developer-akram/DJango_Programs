@@ -1,8 +1,7 @@
 {% extends 'design.html' %} {% block middle %}
-<script src="/static/js/valid.js"></script>
 <div class="row p-5 " style="background-image:linear-gradient(to right bottom,rgb(251, 145, 255),rgb(137, 255, 210),rgb(255, 175, 175));border-radius: 2rem ;">
-    <div class="col-sm-6">
-        <form action="" method="post" class="row mb-5">
+    <div class="col-md-6">
+        <form action="" method="post" class="row mb-5" name="frm">
             {% csrf_token %}
             <div class="row">
                 <div class="col">
@@ -26,6 +25,12 @@
                         Female
                     </label>
                 </div>
+            </div>
+            <div class="col-12 mb-3">
+                    <input type="text" class="form-control" placeholder="Email ID" id="email" name="email">
+            </div>
+            <div class="col-12 mb-3">
+                    <input type="text" class="form-control" placeholder="Mobile number" id="mob" name="mob">
             </div>
             <div class="col-12">
                 <div class="col-12 mb-1">Select Courses</div>
@@ -51,7 +56,7 @@
                     <option value="London">London</option>
                 </select>
                 <div class="col-12 mb-2">State</div>
-                <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example" name="state"
+                <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example" name="state[]"
                     multiple>
                     <option selected class="text-center">Select State HERE</option>
                     <option value="Madhya Pradesh">Madhya Pradesh</option>
@@ -70,7 +75,7 @@
 
         </form>
     </div>
-    <div class="col-sm-6 ps-5 pt-5">
+    <div class="col-md-6 ps-5 pt-5">
         {% for left,right in key.items %}
         <div class="h2" style="word-wrap:break-word; margin-bottom:1rem ;">{{left}}{{right}}</div>
         {% endfor %}

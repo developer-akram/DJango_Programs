@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'fact','fibo','marksheet',
     'hello','pagechange',
     'mysite','siteone','sitetwo',
-    'sitethree','mical',
+    'sitethree','mical','database',
+    'website','trydata',
 ]
 
 MIDDLEWARE = [

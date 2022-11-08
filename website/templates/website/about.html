@@ -1,0 +1,44 @@
+{% extends 'website/layout.html' %}
+{% block middle %}
+<p>Welcome in About us Page</p>
+<div style="float:left">
+<form action="" method="post">
+    {% csrf_token %}
+    <table>
+     <tr><td>Enter Name</td><td><input type="text" name="txtname" value={{name}}></td></tr>
+     <tr><td>Gender</td><td><input type="radio" name="gen" value="Male" />Male <input type="radio" name="gen" value="Female" />Female </td></tr>
+     <tr><td>Course</td><td><input type="checkbox" name="course" value="JAVA" />Java <input type="checkbox" name="course" value=".NET" />.NET <input type="checkbox" name="course" value="PHP" />PHP </td></tr>
+     <tr><td>Country</td><td> <select name="country">
+        <option value="">Select Country</option>
+        <option value="IND">INDIA</option>
+        <option value="USA">USA</option>
+        <option value="UK">UK</option>
+     </select> </td></tr>
+     <tr><td>State </td><td> <select name="state" multiple>
+       
+        <option value="MP">MP</option>
+        <option value="UP">UP</option>
+        <option value="AP">AP</option>
+        <option value="HP">HP</option>
+     </select> </td></tr>
+     <tr><td>Message</td><td><textarea rows="10" cols="30" name="message"> </textarea> </td></tr>
+     <tr><td colspan="2"><input type="submit" name="btnsubmit" value="Click" /></td></tr>
+    </table>
+
+</form>
+</div>
+<div style="float:right;">
+  {% if btn %}
+     <p>Name is {{name}} </p>
+     <p>Gender is {{gender}} </p>
+     <p>Courses are {{course}} </p>
+     <p>Country is {{country}} </p>
+     <p>State is {{state}} </p>
+     <p>Message is {{message}} </p>
+  {% endif %}
+</div>
+
+<div style="clear:both;">
+
+</div>
+{% endblock %} 
