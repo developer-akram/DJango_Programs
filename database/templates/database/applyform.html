@@ -10,7 +10,7 @@
         {% csrf_token %}
       <div class="row">
         <div class="col">
-          <input type="text" class="form-control" placeholder="Enter full name" name="name">
+          <input type="text" class="form-control" placeholder="Enter full name" name="name" id="name">
         </div>
       </div>
       <div class="col-12 ps-1 m-3">
@@ -89,7 +89,7 @@
             <textarea class="form-control areatxt" id="mytextarea" rows="6" name="txtarea" style="resize: none;"></textarea>
           </div>
         <div class="d-grid gap-2 col-6 mx-auto mt-5">
-          <input type="submit" class="btn btn-info" value="Submit Here">
+          <input type="submit" class="btn btn-info" value="Submit Here" onclick="return valid()">
         </div>
       </div>
     </form>
