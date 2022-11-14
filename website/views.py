@@ -33,7 +33,8 @@ def services(request):
         fees = request.POST["txtfees"]
         obj = Student(rno=rno,name=name,branch=branch,fees=fees)
         obj.save()
-        return render(request,"website/services.html",{"key":"Student Data Submitted Successfully"}) 
+        return redirect('gallery')
+       #return render(request,"website/services.html",{"key":"Student Data Submitted Successfully"}) 
 
     return render(request,"website/services.html")   
 
@@ -49,6 +50,17 @@ def findstu(request):
        data.fees = request.POST["txtfees"]
        data.save()
        return redirect('gallery')
+    return render(request,"website/findstu.html",{"stu":data})   
+def deletestu(request):
+    data = Student.objects.get(pk=request.GET["q"])
+    if request.method=="POST":
+        data.delete()
+        return redirect('gallery')
+    return render(request,"website/deleteconfirmation.html",{"res":data})
+
+    
+
+    
     return render(request,"website/findstu.html",{"stu":data}) 
 def contact(request):
     if request.method=="POST":

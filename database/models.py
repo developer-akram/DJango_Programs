@@ -13,6 +13,7 @@ class StudentNew(models.Model):
 class StudentRegistration(models.Model):
     name = models.CharField(max_length = 50)
     gender = models.CharField(max_length = 50)
+    email = models.CharField(max_length = 50, default='')
     mobile = models.IntegerField()
     country = models.CharField(max_length = 50)
     states = models.CharField(max_length = 50)
@@ -22,5 +23,5 @@ class StudentRegistration(models.Model):
     message = models.CharField(max_length = 50)
     
     def __str__(self):
-        return f"Name : {self.name}, Gender : {self.gender}, Mobile : {self.mobile}, Country : {self.country} States : {self.states} city : {self.city} Qualification : {self.qualification} Courses : {self.courses} Message : {self.message}"
+        return f"Name : {self.name}, Gender : {self.gender}, Email : {self.email}, Mobile : {self.mobile}, Country : {self.country} States : {self.states} city : {self.city} Qualification : {self.qualification} Courses : {self.courses} Message : {self.message}"
 # Create your models here.

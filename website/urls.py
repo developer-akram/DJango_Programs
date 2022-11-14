@@ -7,5 +7,6 @@ urlpatterns=[
     path('services',views.services,name='services'),
     path('gallery',views.gallery,name='gallery'),
     path('contact',views.contact,name='contact'),
-    path('findstu',views.findstu,name='findstu')
+    path('findstu',views.findstu,name='findstu'),
+    path('deletestu',views.deletestu,name='deletestu')
 ]

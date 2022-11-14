@@ -1,11 +1,15 @@
 {% extends 'website/layout.html' %}
 {% block middle %}
 <p>Welcome in Student Information</p>
+<form action="services" method="post">
+    {% csrf_token %}
 <table border="1">
     <tr><th>RNO</th><th>NAME</th><th>BRANCH</th><th>FEES</th></tr>
-{% for stux in res   %}
-   <tr><td>{{stux.rno}}</td> <td>{{stux.name}}</td> <td>{{stux.branch}}</td> 
-    <td>{{stux.fees}}</td><td><a href="findstu?q={{stux.id}}">Edit</a></td></tr>
+{% for stu in res   %}
+   <tr><td>{{stu.rno}}</td> <td>{{stu.name}}</td> <td>{{stu.branch}}</td> 
+    <td>{{stu.fees}}</td><td><a href="findstu?q={{stu.id}}">Edit</a> || <a href="deletestu?q={{stu.id}}">Delete</a></td></tr>
 {% endfor %}
+<tr><td><input type="text" name="txtrno" placeholder="Enter rno" /></td><td><input type="text" name="txtname" placeholder="Enter name"  /></td><td><input type="text" name="txtbranch" placeholder="Enter branch"  /></td><td><input type="text" name="txtfees" placeholder="Enter fees"  /></td><td><input type="submit" name="btnsubmit" value="Insert" /></td></tr>
 </table>
+</form>
 {% endblock %}

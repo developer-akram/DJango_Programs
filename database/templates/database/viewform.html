@@ -1,6 +1,98 @@
 {% extends 'database/design.html' %}
 {% block middle %}
-
-
-
+<div class="container-fluid ps-3 pe-3">
+  <div class="row mt-5">
+    <div class="col h1 p-5 text-center bg-success text-dark rounded regis">Student Correction Form</div>
+  </div>
+    <form action="applyform" method="post">
+        {% csrf_token %}
+<table class="table table-striped table-bordered border-primary mt-5 mb-5" style="word-break: break-word;">
+    <tr class="row text-center bg-warning" style="font-size: 0.9rem;">
+        <th class="col-2">Name</th>
+        <th class="col-1">Gender</th>
+        <th class="col-1">Email</th>
+        <th class="col-1">Mobile</th>
+        <th class="col-1">Country</th>
+        <th class="col-1">States</th>
+        <th class="col-1">City</th>
+        <th class="col-1">Qualification</th>
+        <th class="col-1">Courses</th>
+        <th class="col-1">Message</th>
+        <th class="col-1">Modify</th>
+    </tr>
+    {% for stu in all %}
+    <tr class="row">
+        <td class="col-2"><strong>{{stu.name}}</strong></td>
+        <td class="col-1">{{stu.gender}}</td>
+        <td class="col-1">{{stu.email}}</td>
+        <td class="col-1">{{stu.mobile}}</td>
+        <td class="col-1">{{stu.country}}</td>
+        <td class="col-1">{{stu.states}}</td>
+        <td class="col-1">{{stu.city}}</td>
+        <td class="col-1">{{stu.qualification}}</td>
+        <td class="col-1">{{stu.courses}}</td>
+        <td class="col-1">{{stu.message}}</td>
+        <td class="col-1"><a href="correctionform?q={{stu.id}}"><i class="bi bi-pencil-square h3 text-dark"></i></a>&emsp;&emsp;<a href="deleteform?q={{stu.id}}"><i class="bi bi-trash-fill h3 text-danger"></i></a></td>
+    </tr>
+    {% endfor %}
+    <tr class="row">
+        <td class="col-2"><div class="input-group">
+            <input type="text" class="form-control" placeholder="Enter full name" name="name">
+          </div></td>
+        <td class="col-1" style="font-size:0.8rem ;"><div class="form-check">
+            <input class="form-check-input" type="radio" name="gender" id="male" value="Male">
+            <label class="form-check-label" for="male">
+              Male
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="gender" id="female" value="Female">
+            <label class="form-check-label" for="female">
+              Female
+            </label>
+          </div></td>
+        <td class="col-1"><input type="text" class="form-control" id="email" placeholder="Email" name="email"></td>
+        <td class="col-1"><input class="form-control" type="text" name="mobile" placeholder="Mobile"></td>
+        <td class="col-1"><select class="form-select" aria-label="Default select example" id="country" name="country">
+            <option value="" disabled selected>Select Your Country</option>
+            <option value="India">India</option>
+            <option value="United State of America">United State of America</option>
+            <option value="Germany">Germany</option>
+          </select></td>
+        <td class="col-1"><select class="form-select" aria-label="Default select example" id="state" name="state" multiple>
+            <option value="" disabled selected>Select State</option>
+            <option value="Madhya Pradesh">MP</option>
+            <option value="Uttar Pradesh">UP</option>
+            <option value="West Bengal">WB</option>
+          </select></td>
+        <td class="col-1"><select class="form-select" aria-label="Default select example" id="city" name="city">
+            <option value="" disabled selected>Select Your City</option>
+            <option value="Indore">Indore</option>
+            <option value="Jabalpur">Jabalpur</option>
+            <option value="Bhopal">Bhopal</option>
+          </select></td>
+        <td class="col-1"><select class="form-select" aria-label="Default select example" id="qualification" name="qualification">
+            <option value="" disabled selected>Select Last Qualification</option>
+            <option value="Class X">Class X</option>
+            <option value="Class XII">Class XII</option>
+            <option value="Graduate">Graduate</option>
+          </select></td>
+        <td class="col-1"><div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="java" name="tech" value="Java">
+            <label class="form-check-label" for="java">Java</label>
+          </div>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="python" name="tech" value="Python">
+            <label class="form-check-label" for="python">Python</label>
+          </div>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="android" name="tech" value="Android">
+            <label class="form-check-label" for="android">Android</label>
+          </div></td>
+        <td class="col-1"><textarea class="form-control areatxt" id="mytextarea" rows="3" name="txtarea" style="resize: none;"></textarea></td>
+        <td class="col-1"><input type="submit" class="btn btn-info" value="Add NEW"></td>
+    </tr>
+</table>
+</form>
+</div>
 {% endblock %}

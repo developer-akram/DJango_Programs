@@ -38,10 +38,9 @@ def adddata(request):
 
 def applyform(request):
     if request.method == 'POST':
-        fname = request.POST['fname']
-        lname = request.POST['lname']
-        name = f"{fname} {lname}"
+        name = request.POST['name']
         gender = request.POST['gender']
+        email = request.POST['email']
         mobile = request.POST['mobile']
         country = request.POST['country']
         state = request.POST.getlist('state')
@@ -65,11 +64,54 @@ def applyform(request):
             else:
                 courses += course[i] + ', '
         message = request.POST['txtarea']
-        newobj = StudentRegistration(name = name, gender = gender, mobile = mobile, country = country, states = states, city = city, qualification = qualification, courses = courses, message = message)
+        newobj = StudentRegistration(name = name, gender = gender, email = email, mobile = mobile, country = country, states = states, city = city, qualification = qualification, courses = courses, message = message)
         newobj.save()
-        return render(request, 'database/applyform.html',{'applytrue':'Your Form has been Successfully Submitted, Thank You.'})
+        return redirect('viewform')
+        #return render(request, 'database/applyform.html',{'applytrue':'Your Form has been Successfully Submitted, Thank You.'})
     return render(request, 'database/applyform.html')
 
 def viewform(request):
-    return render(request, 'database/viewform.html')
+    viewAllData = StudentRegistration.objects.all()
+    return render(request, 'database/viewform.html',{'all':viewAllData})
+
+def deleteform(request):
+    data = StudentRegistration.objects.get(pk = request.GET['q'])
+    if request.method == 'POST':
+        data.delete()
+        return redirect('viewform')
+    return render(request, 'database/deleteform.html',{'id':data})
+
+def correctionform(request):
+    data = StudentRegistration.objects.get(pk = request.GET['q'])
+    if request.method == 'POST':
+        data.name = request.POST['name']
+        data.gender = request.POST['gender']
+        data.email = request.POST['email']
+        data.mobile = request.POST['mobile']
+        data.country = request.POST['country']
+        state = request.POST.getlist('state')
+        data.states = ''
+        for i in range(len(state)):
+            if state[i] == '':
+                continue
+            if i == len(state) - 1:
+                data.states += state[i]
+            else:
+                data.states += state[i] + ', '
+        data.city = request.POST['city']
+        data.qualification = request.POST['qualification']
+        course = request.POST.getlist('tech')
+        data.courses = ''
+        for i in range(len(course)):
+            if course[i] == '':
+                continue
+            if i == len(course) - 1:
+                data.courses += course[i]
+            else:
+                data.courses += course[i] + ', '
+        data.message = request.POST['txtarea']
+        data.save()
+        return redirect('viewform')
+    return render(request, 'database/correctionform.html',{'cor':data})
+
 # Create your views here.

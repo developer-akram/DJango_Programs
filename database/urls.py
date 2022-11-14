@@ -10,4 +10,6 @@ urlpatterns = [
     path('deleteData',views.deleteData,name="deleteData"),
     path('applyform',views.applyform,name="applyform"),
     path('viewform',views.viewform,name="viewform"),
+    path('deleteform',views.deleteform,name="deleteform"),
+    path('correctionform',views.correctionform,name="correctionform"),
 ]

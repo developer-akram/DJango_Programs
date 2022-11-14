@@ -10,10 +10,7 @@
         {% csrf_token %}
       <div class="row">
         <div class="col">
-          <input type="text" class="form-control" placeholder="First name" aria-label="First name" id="fname" name="fname">
-        </div>
-        <div class="col">
-          <input type="text" class="form-control" placeholder="Last name" aria-label="Last name" id="lname" name="lname">
+          <input type="text" class="form-control" placeholder="Enter full name" name="name">
         </div>
       </div>
       <div class="col-12 ps-1 m-3">
@@ -37,12 +34,12 @@
           <input type="text" class="form-control" id="email" placeholder="name@example.com" name="email">
         </div>
         <div class="col-12 mb-3">
-          <label for="email" class="form-label">Mobile No</label>
+          <label for="mob" class="form-label">Mobile No</label>
           <input type="text" class="form-control" id="mob" placeholder="Mobile Number" name="mobile">
         </div>
         <div class="col-12 mb-3">
           <select class="form-select" aria-label="Default select example" id="country" name="country">
-            <option value="" selected>Select Your Country</option>
+            <option value="" disabled selected>Select Your Country</option>
             <option value="India">India</option>
             <option value="United State of America">United State of America</option>
             <option value="Germany">Germany</option>
@@ -50,7 +47,7 @@
         </div>
         <div class="col-12 mb-3">
           <select class="form-select" aria-label="Default select example" id="state" name="state" multiple>
-            <option value="" selected>Select Your State</option>
+            <option value="" disabled selected>Select Your State</option>
             <option value="Madhya Pradesh">Madhya Pradesh</option>
             <option value="Uttar Pradesh">Uttar Pradesh</option>
             <option value="West Bengal">West Bengal</option>
@@ -58,7 +55,7 @@
         </div>
         <div class="col-12 mb-3">
           <select class="form-select" aria-label="Default select example" id="city" name="city">
-            <option value="" selected>Select Your City</option>
+            <option value="" disabled selected>Select Your City</option>
             <option value="Indore">Indore</option>
             <option value="Jabalpur">Jabalpur</option>
             <option value="Bhopal">Bhopal</option>
@@ -66,7 +63,7 @@
         </div>
         <div class="col-12 mb-3">
           <select class="form-select" aria-label="Default select example" id="qualification" name="qualification">
-            <option value="" selected>Select Last Qualification</option>
+            <option value="" disabled selected>Select Last Qualification</option>
             <option value="Class X">Class X</option>
             <option value="Class XII">Class XII</option>
             <option value="Graduate">Graduate</option>
