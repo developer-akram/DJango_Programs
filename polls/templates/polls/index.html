@@ -1,0 +1,18 @@
+{% extends 'polls/layout.html' %}
+{% block middle %}
+<div class="row">
+    <div class="col">
+        {% if latest_question_list %}
+    </div>
+</div>
+    <ul class="row">
+    {% for question in latest_question_list %}
+        <li class="col" style="list-style-type: none;"><a href="/polls/{{ question.id }}/" class="btn btn-outline-danger">{{ question.question_text }} ?</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+
+
+{% endblock %}

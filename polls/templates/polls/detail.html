@@ -1,0 +1,18 @@
+{% extends 'polls/layout.html' %}
+{% block middle %}
+<form action="{% url 'polls:vote' question.id %}" method="post">
+    {% csrf_token %}
+    <fieldset class="text-center">
+        <legend class="h1 pt-4 pb-4 bg-info rounded-pill mb-4">
+            {{ question.question_text }} ?
+        </legend>
+        {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+        {% for choice in question.choice_set.all %}
+        <input type="radio" class="form-check-input mb-3" name="choice" id="choice{{ forloop.counter }}"
+            value="{{ choice.id }}">
+        <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br>
+        {% endfor %}
+    </fieldset>
+    <div class="d-grid gap-2 col-6 mx-auto row mt-4"><input type="submit" class="btn btn-outline-primary btn-lg" value="Vote"></div>
+</form>
+{% endblock %}

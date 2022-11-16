@@ -1,0 +1,18 @@
+{% extends 'polls/layout.html' %}
+{% block middle %}
+
+<div class="row">
+    <div class="col-12 h1 text-center pt-5 pb-5 bg-info rounded-pill">
+        {{ question.question_text }} ?
+    </div>
+<div class="row">
+<ul class="d-grid gap-2 col-6 mx-auto mt-4 mb-4 h3">
+{% for choice in question.choice_set.all %}
+    <li class="col-12 text-center mb-3" style="list-style-type: none;font-variant: small-caps;">{{ choice.choice_text }} &rarr; {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+{% endfor %}
+</ul></div>
+<div class="d-grid gap-2 col-6 mx-auto"><a href="{% url 'polls:detail' question.id %}" class="col btn-lg form-control btn btn-danger">Vote again?</a></div>
+    
+</div>
+
+{% endblock %}

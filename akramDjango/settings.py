@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'mysite','siteone','sitetwo',
     'sitethree','mical','database',
     'website','trydata','psite',
+    'polls',
 ]
 
 MIDDLEWARE = [

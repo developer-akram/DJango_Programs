@@ -1,6 +1,6 @@
 {% extends 'database/design.html' %}
 {% block middle %}
-<form class="container ps-5 pt-5 pe-5" method="post">
+<form class="container pt-5" method="post">
     {% csrf_token %}
     <table class="table table-striped" style="font-variant: small-caps;font-size: 1.5rem;word-break: break-word;">
         <thead class="table-dark">
@@ -13,10 +13,10 @@
         </thead>
         <tbody>
             <tr style="text-transform: uppercase;">
-                <th scope="row"><input type="text" name="rno" placeholder="Enter roll" style="width:15rem ;" required></th>
-                <td><input type="text" name="name" placeholder="Enter name" style="width:20rem ;" required></td>
-                <td><input type="text" name="branch" placeholder="Enter branch" style="width:20rem ;" required></td>
-                <td><input type="text" name="fees" placeholder="Enter fees" style="width:10rem ;" required></td>
+                <th scope="row"><input type="text" name="rno" placeholder="Enter roll" class="form-control" style="width:15rem ;" required></th>
+                <td><input type="text" class="form-control" name="name" placeholder="Enter name" style="width:20rem ;" required></td>
+                <td><input type="text" class="form-control" name="branch" placeholder="Enter branch" style="width:20rem ;" required></td>
+                <td><input type="text" class="form-control" name="fees" placeholder="Enter fees" style="width:10rem ;" required></td>
             </tr>
         </tbody>
     </table>

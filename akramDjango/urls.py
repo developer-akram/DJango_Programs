@@ -36,4 +36,5 @@ urlpatterns = [
     path('website/', include('website.urls')),
     path('trydata/', include('trydata.urls')),
     path('psite/', include('psite.urls')),
+    path('polls/', include('polls.urls')),
 ]
