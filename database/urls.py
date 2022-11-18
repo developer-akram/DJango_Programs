@@ -12,4 +12,5 @@ urlpatterns = [
     path('viewform',views.viewform,name="viewform"),
     path('deleteform',views.deleteform,name="deleteform"),
     path('correctionform',views.correctionform,name="correctionform"),
+    path('login',views.login,name="login"),
 ]

@@ -9,6 +9,11 @@ class StudentNew(models.Model):
     def __str__(self):
         return f"Roll : {self.rno}, Name : {self.name}, Branch : {self.branch}, Fees : {self.fees}"
 
+class User(models.Model):
+    username = models.CharField(max_length = 50)
+    password = models.CharField(max_length = 50)
+    email = models.CharField(max_length = 50)
+    mobile_no = models.CharField(max_length = 50)
 
 class StudentRegistration(models.Model):
     name = models.CharField(max_length = 50)

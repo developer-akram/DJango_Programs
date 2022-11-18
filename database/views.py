@@ -1,7 +1,27 @@
 from django.shortcuts import render,redirect
-from .models import StudentNew, StudentRegistration
+from .models import StudentNew, StudentRegistration,User
 def index(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        email = request.POST['email']
+        mobile_no = request.POST['mobile_no']
+        obj = User(username = username, password = password, email = email, mobile_no = mobile_no)
+        obj.save()
+        return render(request, 'database/index.html',{"key":"Successfully Registered"})
     return render(request, 'database/index.html')
+
+
+def login(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        obj = User.objects.filter(username = username, password = password)
+        if obj.count()== 1:
+            return redirect('viewform')
+        else:
+            return render(request, 'database/login.html',{'key':'Invalid username or password'})
+    return render(request, 'database/login.html')
 
 def dataadd(request):
     return render(request, 'database/dataadd.html')
@@ -113,5 +133,7 @@ def correctionform(request):
         data.save()
         return redirect('viewform')
     return render(request, 'database/correctionform.html',{'cor':data})
+
+
 
 # Create your views here.

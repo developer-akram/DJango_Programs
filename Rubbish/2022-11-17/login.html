@@ -1,0 +1,29 @@
+{% extends 'database/design.html' %}
+{% block middle %}
+
+<form class="row pt-5" method="post">
+    {% csrf_token %}
+    <table class="table table-striped" style="font-variant: small-caps;font-size: 1.5rem;word-break: break-word;">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">Username</th>
+                <th scope="col">Password</th>
+                <th scope="col">Email</th>
+                <th scope="col">Mobile</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="text-transform: uppercase;">
+                <th scope="row"><input type="text" name="username" placeholder="Enter username" class="form-control" style="width:15rem ;" required></th>
+                <td><input type="text" class="form-control" name="password" placeholder="Enter password" style="width:20rem ;" required></td>
+                <td><input type="text" class="form-control" name="email" placeholder="Enter email" style="width:20rem ;" required></td>
+                <td><input type="text" class="form-control" name="mobile_no" placeholder="Enter mobile no" style="width:10rem ;" required></td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="row justify-content-evenly mt-5">
+    <input type="submit" class="btn btn-primary btn-lg col-4" value="ADD RECORD HERE">
+<a class="btn btn-danger btn-lg col-4" href="viewdata">VIEW ALL RECORDS</a></div> 
+</form>
+
+{% endblock %}
