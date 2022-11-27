@@ -1,10 +1,24 @@
 {% extends 'website/layout.html' %}
 {% block middle %}
 <p>Welcome in Home Page</p>
-<p>samhdg gfhjdg fhdgfhdg hfjdg g dhfg h</p>
+<p>Registration Form</p>
 <div class="row">
     <div class="col-sm-6">
-        <img src="/static/images/a.png" class="img-fluid" />
+       <form action="" method="post">
+          {% csrf_token %}
+          <input type="text" name="txtuser" placeholder="Enter username" required />
+          <br><br>
+          <input type="password" name="txtpass" placeholder="Enter password"  required/>
+          <br><br>
+          <input type="email" name="txtemail" placeholder="Enter email"  required />
+          <br><br>
+          <input type="text" name="txtmobile" placeholder="Enter mobile"  required/>
+          <br><br>
+          <input type="submit" value="Register" name="btnsubmit" />
+
+       </form>
+       <a href="login">Login here</a>
+       {{key}}
     </div>
     <div class="col-sm-6">
         <div class="embed-responsive embed-responsive-16by9">
@@ -13,7 +27,7 @@
     </div>
 </div>
 
+ 
 
 
-
-{% endblock %}
+{% endblock %} 

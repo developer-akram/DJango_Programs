@@ -37,4 +37,12 @@ urlpatterns = [
     path('trydata/', include('trydata.urls')),
     path('psite/', include('psite.urls')),
     path('polls/', include('polls.urls')),
+    path('feedback/', include('feedback.urls')),
+    path('check/', include('check.urls')),
+    path('cookies/', include('cookies.urls')),
+    path('cookiesNew/', include('cookiesNew.urls')),
+    path('cookiesOld/', include('cookiesOld.urls')),
+    path('classView/', include('classView.urls')),
+    path('allclassview/', include('allclassview.urls')),
+    path('addapp/', include('addapp.urls')),
 ]

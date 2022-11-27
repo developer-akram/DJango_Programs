@@ -1,0 +1,70 @@
+{% extends 'feedback/design.html' %}
+{% block middle %}
+
+<div class="container p-5 bg-info">
+    <div class="row justify-content-center">
+        <div class="col-8 rounded display-6 mb-5 text-center bg-danger text-white">
+        Are you sure to delete These records?
+    </div>
+    </div>
+    <form action="" method="post">
+        {% csrf_token %}
+    <div class="row justify-content-center m-2 p-2 h4 bg-dark text-white">
+        <div class="col-5">
+            Name : {{id.name}}
+        </div>
+    </div>
+    <div class="row justify-content-center m-2 p-2 h4 bg-dark text-white">
+        <div class="col-5">
+            Gender : {{id.gender}}
+        </div>
+    </div>
+    <div class="row justify-content-center m-2 p-2 h4 bg-dark text-white">
+        <div class="col-5">
+            Email : {{id.email}}
+        </div>
+    </div>
+    <div class="row justify-content-center m-2 p-2 h4 bg-dark text-white">
+        <div class="col-5">
+            Mobile : {{id.mobile}}
+        </div>
+    </div>
+    <div class="row justify-content-center m-2 p-2 h4 bg-dark text-white">
+        <div class="col-5">
+            Country : {{id.country}}
+        </div>
+    </div>
+    <div class="row justify-content-center m-2 p-2 h4 bg-dark text-white">
+        <div class="col-5">
+            States : {{id.states}}
+        </div>
+    </div>
+    <div class="row justify-content-center m-2 p-2 h4 bg-dark text-white">
+        <div class="col-5">
+            City : {{id.city}}
+        </div>
+    </div>
+    <div class="row justify-content-center m-2 p-2 h4 bg-dark text-white">
+        <div class="col-5">
+            Qualification : {{id.qualification}}
+        </div>
+    </div>
+    <div class="row justify-content-center m-2 p-2 h4 bg-dark text-white">
+        <div class="col-5">
+            Courses : {{id.courses}}
+        </div>
+    </div>
+    <div class="row justify-content-center m-2 p-2 h4 bg-dark text-white">
+        <div class="col-5">
+            Message : {{id.message}}
+        </div>
+    </div>
+    <div class="row justify-content-center mt-4">
+        <input type="submit" class="col-5 btn btn-danger btn-lg" value="DELETE PERMANENTLY">
+    </div>
+    <div class="row justify-content-center mt-4">
+        <a href="viewform" class="col-5 btn btn-primary btn-lg">Cancel</a>
+    </div>
+</form>
+</div>
+{% endblock %}

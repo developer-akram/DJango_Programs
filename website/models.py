@@ -6,3 +6,9 @@ class Student(models.Model):
     fees = models.IntegerField()
     def __str__(self):
         return "rno is " + str(self.rno) + " name is "+str(self.name) + "branch is "+self.branch + "fees is " + str(self.fees)
+
+class Register(models.Model):
+    username = models.CharField(max_length=50)
+    password = models.CharField(max_length=50)
+    email = models.CharField(max_length=50)
+    mobile = models.CharField(max_length=50)

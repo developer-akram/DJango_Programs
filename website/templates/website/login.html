@@ -1,0 +1,31 @@
+{% extends 'website/layout.html' %}
+{% block middle %}
+<p>Welcome in Home Page</p>
+<p>Login Form</p>
+<div class="row">
+    <div class="col-sm-6">
+       <form action="" method="post">
+          {% csrf_token %}
+          <input type="text" name="txtuser" placeholder="Enter username" required />
+          <br><br>
+          <input type="password" name="txtpass" placeholder="Enter password"  required/>
+          <br><br>
+          <input type="submit" value="Login" name="btnsubmit" />
+          <br><br>
+       </form>
+       {{key}}
+       <br>
+       <a href="/website">Register here</a>
+  
+    </div>
+    <div class="col-sm-6">
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Kh4mfv-wfXU" title="YouTube video player" allowfullscreen></iframe>
+          </div>
+    </div>
+</div>
+
+ 
+
+
+{% endblock %} 

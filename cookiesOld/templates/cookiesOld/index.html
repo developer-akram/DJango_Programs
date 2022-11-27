@@ -1,0 +1,24 @@
+{% extends 'cookiesOld/design.html' %}
+{% block middle %}
+<div class="container pt-5 pb-5">
+  <div class="row mb-4">
+    <div class="col text-center display-6 fw-bold pt-3 pb-3 bg-info rounded">
+      First Cookie App
+    </div>
+  </div>
+  <form action="" method="post" class="row">
+    {% csrf_token %}
+    <div class="row justify-content-center">
+    <div class="col-md-5">
+      <input type="text" name="cookieOld" class="form-control" placeholder="Enter text here">
+    </div>
+    <div class="col-md-5">
+      <input type="submit" class="btn btn-primary" value="Submit Chat">
+    </div>
+    <div class="col-md-10">
+        {{ keyold }}
+    </div>
+  </div>
+  </form>
+</div>
+{% endblock %}

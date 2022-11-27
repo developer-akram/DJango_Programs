@@ -1,5 +1,7 @@
 from django.shortcuts import render,redirect
-from .models import StudentNew, StudentRegistration,User
+from .models import *
+from django.db.models import Avg
+
 def index(request):
     if request.method == 'POST':
         username = request.POST['username']
@@ -11,17 +13,21 @@ def index(request):
         return render(request, 'database/index.html',{"key":"Successfully Registered"})
     return render(request, 'database/index.html')
 
-
 def login(request):
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
         obj = User.objects.filter(username = username, password = password)
-        if obj.count()== 1:
-            return redirect('viewform')
+        if obj.count() > 0:
+            request.session['loginID'] = username
+            return redirect('/database/viewform')
         else:
             return render(request, 'database/login.html',{'key':'Invalid username or password'})
     return render(request, 'database/login.html')
+
+def logout(request):
+    del request.session['loginID']
+    return redirect('/database/login')
 
 def dataadd(request):
     return render(request, 'database/dataadd.html')
@@ -41,6 +47,7 @@ def deleteData(request):
     data = StudentNew.objects.get(pk=request.GET["q"])
     data.delete()
     return redirect('viewdata')
+
 def viewdata(request):
     data = StudentNew.objects.all()
     return render(request, 'database/viewdata.html',{'viewData':data})
@@ -91,8 +98,12 @@ def applyform(request):
     return render(request, 'database/applyform.html')
 
 def viewform(request):
-    viewAllData = StudentRegistration.objects.all()
-    return render(request, 'database/viewform.html',{'all':viewAllData})
+    if request.session.has_key('loginID'):
+        viewAllData = StudentRegistration.objects.all()
+        emp = User.objects.filter(username = request.session['loginID'])
+        return render(request, 'database/viewform.html',{'all':viewAllData,'employee':emp})
+    else:
+        return redirect('/database/login')
 
 def deleteform(request):
     data = StudentRegistration.objects.get(pk = request.GET['q'])
@@ -134,6 +145,34 @@ def correctionform(request):
         return redirect('viewform')
     return render(request, 'database/correctionform.html',{'cor':data})
 
+def courselist(request):
+    all_courses = Courses.objects.all()
+    if request.method == 'POST':
+        course = request.POST['course']
+        f_list = Faculty.objects.filter(course__name = course)
+        return render(request, 'database/feedback.html',{'course':course, 'faculty':f_list})
+    return render(request, 'database/courselist.html',{'course':all_courses})
 
+def feedback(request):
+    if request.method == 'POST':
+        s_name = request.POST['s_name']
+        s_rating = request.POST['s_rating']
+        c_name = request.POST['c_name']
+        f_name = request.POST['faculty'] 
+        students = Student.objects.filter(faculty__name = name)
+        avg = students.aggregate(Avg('rating'))
+        return render(request, 'database/feedback.html')      
 
+def showrating(request):
+    flist = Faculty.objects.values('name').distinct()
+    if request.method == 'POST':
+        faculty = request.POST['faculty']
+        f_name = Faculty.objects.filter(name = faculty)
+        s_name = Student.objects.filter(faculty__name = faculty)
+        s = ''
+        for i in s_name:
+            s = s + i.name + ', '
+        return render(request, 'database/showrating.html',{'fname':f_name,'sname':s_name,'final':s})
+    
+    return render(request, 'database/showrating.html',{'all':flist})
 # Create your views here.

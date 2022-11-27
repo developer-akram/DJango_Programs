@@ -1,0 +1,102 @@
+{% extends 'feedback/design.html' %}
+{% block middle %}
+
+<div class="container">
+    <div class="row mt-5">
+      <div class="col h1 p-5 text-center bg-primary text-warning rounded-pill regis">Student Correction Form</div>
+    </div>
+    <div class="row justify-content-center mb-5">
+    <form action="" class="row mt-5 pt-5 p-5 bg-success rounded applyform" method="post" style="background-image:linear-gradient(to right bottom,rgb(231, 88, 253),rgb(196, 255, 119),rgb(83, 252, 255)) ; width: 50rem;">
+        {% csrf_token %}
+      <div class="row">
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Enter full name" id="name" name="name" value="{{cor.name}}">
+        </div>
+      </div>
+      <div class="col-12 ps-1 m-3">
+        <div class="col mb-3">Select Gender</div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="gender" id="male" value="Male"{% if cor.gender == 'Male'  %} checked {% endif %}>
+          <label class="form-check-label" for="male">
+            Male
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="gender" id="female" value="Female"{% if cor.gender == 'Female' %} checked {% endif %}>
+          <label class="form-check-label" for="female">
+            Female
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 mb-3">
+          <label for="email" class="form-label">Email address</label>
+          <input type="text" class="form-control" id="email" placeholder="name@example.com" name="email" value="{{cor.email}}">
+        </div>
+        <div class="col-12 mb-3">
+          <label for="mob" class="form-label">Mobile No</label>
+          <input type="text" class="form-control" id="mob" placeholder="Mobile Number" name="mobile" value="{{cor.mobile}}">
+        </div>
+        <div class="col-12 mb-3">
+          <select class="form-select" aria-label="Default select example" id="country" name="country">
+            <option value="" disabled>Select Your Country</option>
+            <option value="India"{% if cor.country == 'India' %} selected {% endif %}>India</option>
+            <option value="United State of America"{% if cor.country == 'United State of America' %} selected {% endif %}>United State of America</option>
+            <option value="Germany"{% if cor.country == 'Germany' %} selected {% endif %}>Germany</option>
+          </select>
+        </div>
+        <div class="col-12 mb-3">
+          <select class="form-select" aria-label="Default select example" id="state" name="state" multiple>
+            <option value="" disabled>Select Your State</option>
+            <option value="Madhya Pradesh"{% if 'Madhya Pradesh' in cor.states %} selected {% endif %}>Madhya Pradesh</option>
+            <option value="Uttar Pradesh"{% if 'Uttar Pradesh' in cor.states %} selected {% endif %}>Uttar Pradesh</option>
+            <option value="West Bengal"{% if 'West Bengal' in cor.states %} selected {% endif %}>West Bengal</option>
+          </select>
+        </div>
+        <div class="col-12 mb-3">
+          <select class="form-select" aria-label="Default select example" id="city" name="city">
+            <option value="" disabled>Select Your City</option>
+            <option value="Indore"{% if cor.city == 'Indore' %} selected {% endif %}>Indore</option>
+            <option value="Jabalpur"{% if cor.city == 'Jabalpur' %} selected {% endif %}>Jabalpur</option>
+            <option value="Bhopal"{% if cor.city == 'Bhopal' %} selected {% endif %}>Bhopal</option>
+          </select>
+        </div>
+        <div class="col-12 mb-3">
+          <select class="form-select" aria-label="Default select example" id="qualification" name="qualification">
+            <option value="" disabled>Select Last Qualification</option>
+            <option value="Class X"{% if cor.qualification == 'Class X' %} selected {% endif %}>Class X</option>
+            <option value="Class XII"{% if cor.qualification == 'Class XII' %} selected {% endif %}>Class XII</option>
+            <option value="Graduate"{% if cor.qualification == 'Graduate' %} selected {% endif %}>Graduate</option>
+          </select>
+        </div>
+        <div class="col-12">
+          <div class="col mb-1">Select Desired Courses</div>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="java" name="tech" value="Java"{% if 'Java' in cor.courses %} checked {% endif %}>
+            <label class="form-check-label" for="java">Java</label>
+          </div>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="python" name="tech" value="Python"{% if 'Python' in cor.courses %} checked {% endif %}>
+            <label class="form-check-label" for="python">Python</label>
+          </div>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="android" name="tech" value="Android"{% if 'Android' in cor.courses %} checked {% endif %}>
+            <label class="form-check-label" for="android">Android</label>
+          </div>
+        </div>
+        <div class="mb-3 mt-3">
+            <label for="mytextarea" class="form-label">Tell us about yourself</label>
+            <textarea class="form-control areatxt" id="mytextarea" rows="6" name="txtarea" style="resize: none;">{{cor.message}}</textarea>
+          </div>
+        <div class="d-grid gap-2 col-6 mx-auto mt-5">
+          <input type="submit" class="btn btn-info" value="Correct Here" onclick="return valid()">
+        </div>
+      </div>
+    </form>
+    <div class="col-12 display-6 text-center mt-5 text-primary">
+        {{applytrue}}
+    </div>
+    </div>
+  </div>
+
+{% endblock %}

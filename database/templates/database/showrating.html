@@ -1,0 +1,57 @@
+{% extends 'database/design.html' %}
+{% block middle %}
+
+<div class="container">
+    <form action="" method="post" class="row mt-5 mb-5">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col">
+                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="faculty">
+                    <option selected disabled>Select Faculty</option>
+                    {% for i in all %} <option value="{{ i.name }}">{{ i.name }}</option> {% endfor %}
+                </select>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <input type="submit" class="btn btn-lg btn-outline-danger col-8 mt-5" value="View Faculties">
+        </div>
+    </form>
+    <div class="row justify-content-center text-center mb-5">
+        {% for i in fname %}
+        <div class="row mt-3 fw-bold p-2 display-6 bg-primary text-white rounded-pill">
+            <div class="col-7">
+                Faculty name : {{ i.name }}
+            </div>
+            <div class="col-5 text-dark">
+                Course : {{ i.course }}
+            </div>
+        </div>
+        {% endfor %}
+        <!-- <div class="col-5 fw-bold p-2 display-6 bg-primary text-white">
+            Average Rating : {{a}}
+        </div> -->
+        {% if fname %}
+        <div class="row justify-content-center text-center">
+            <div class="col-5 mt-3 p-3 text-white rounded-start fs-3 bg-danger">
+                Name
+            </div>
+            <div class="col-3 mt-3 fs-3 p-3 bg-dark rounded-end text-warning">
+                Rating
+            </div>
+            {% endif %}
+        </div>
+        <div class="row justify-content-center text-center">
+            {% for s in sname %}
+            <div class="col-5 mt-3 rounded-start fs-3 bg-info">
+                {{ s.name }} {{ s.faculty }}
+            </div>
+            <div class="col-3 mt-3 fs-3 bg-dark rounded-end text-warning">
+                {{ s.rating }}
+            </div>
+            {% endfor %}
+        </div>
+        <!-- <div class="h1">{{final}}</div> -->
+    </div>
+
+
+    {% endblock %}

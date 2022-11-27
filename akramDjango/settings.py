@@ -43,7 +43,9 @@ INSTALLED_APPS = [
     'mysite','siteone','sitetwo',
     'sitethree','mical','database',
     'website','trydata','psite',
-    'polls',
+    'polls','feedback','check',
+    'cookies','cookiesNew','cookiesOld',
+    'classView','allclassview','addapp',
 ]
 
 MIDDLEWARE = [

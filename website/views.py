@@ -1,9 +1,22 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
-from .models import Student
+from .models import Student,Register
 def home(request):
+    if request.method=="POST":
+        obj = Register(username=request.POST["txtuser"],password=request.POST["txtpass"],email=request.POST["txtemail"],mobile=request.POST["txtmobile"])
+        obj.save()
+        return render(request,"website/home.html",{"key":"registration successfully"})
     return render(request,"website/home.html")
-
+def login(request):
+    if request.method=="POST":
+        obj = Register.objects.filter(username=request.POST["txtuser"],password=request.POST["txtpass"])
+        if(obj.count()>0):
+          request.session["loggedid"] = request.POST["txtuser"]
+          return redirect('gallery')
+        else:
+         return render(request,"website/login.html",{"key":"Invalid userid and password"})      
+        
+    return render(request,"website/login.html")
 def about(request):
     if request.method=="POST":
         name = request.POST["txtname"]
@@ -39,8 +52,12 @@ def services(request):
     return render(request,"website/services.html")   
 
 def gallery(request):
-    data = Student.objects.all()
-    return render(request,"website/gallery.html",{"res":data}) 
+    if request.session.has_key("loggedid"):
+       data = Student.objects.all()
+       data1 = Register.objects.filter(username=request.session["loggedid"])
+       return render(request,"website/gallery.html",{"res":data,"res1":data1}) 
+    else:
+        return redirect('/website/login')   
 def findstu(request):
     data = Student.objects.get(pk=request.GET["q"])
     if request.method=="POST":
@@ -67,3 +84,6 @@ def contact(request):
         return HttpResponse("Welcome in Contact Form")
     return render(request,"website/contact.html")       
 
+def logout(request):
+    del request.session["loggedid"]
+    return redirect("login")

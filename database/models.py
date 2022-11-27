@@ -14,7 +14,7 @@ class User(models.Model):
     password = models.CharField(max_length = 50)
     email = models.CharField(max_length = 50)
     mobile_no = models.CharField(max_length = 50)
-
+    
 class StudentRegistration(models.Model):
     name = models.CharField(max_length = 50)
     gender = models.CharField(max_length = 50)
@@ -29,4 +29,25 @@ class StudentRegistration(models.Model):
     
     def __str__(self):
         return f"Name : {self.name}, Gender : {self.gender}, Email : {self.email}, Mobile : {self.mobile}, Country : {self.country} States : {self.states} city : {self.city} Qualification : {self.qualification} Courses : {self.courses} Message : {self.message}"
+
+class Courses(models.Model):
+    name = models.CharField(max_length=20)
+    def __str__(self):
+        return self.name
+
+class Faculty(models.Model):
+    course = models.ForeignKey(Courses, on_delete=models.CASCADE)
+    name = models.CharField(max_length=20)
+    def __str__(self):
+        return f"{self.name} - [{self.course}]"
+
+class Student(models.Model):
+    # course = models.ForeignKey(Courses, on_delete=models.CASCADE)
+    faculty = models.ForeignKey(Faculty, on_delete=models.CASCADE)
+    name = models.CharField(max_length=20)
+    rating = models.IntegerField(null=True, blank=True)
+
+    def __str__(self):
+        return f"{self.name} - {self.faculty} || <<< {self.rating} >>>"
+  
 # Create your models here.

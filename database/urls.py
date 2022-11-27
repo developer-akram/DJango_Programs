@@ -13,4 +13,8 @@ urlpatterns = [
     path('deleteform',views.deleteform,name="deleteform"),
     path('correctionform',views.correctionform,name="correctionform"),
     path('login',views.login,name="login"),
+    path('<int:course_id>/',views.feedback,name="feedback"),
+    path('courselist',views.courselist,name="courselist"),
+    path('showrating',views.showrating,name="showrating"),
+    path('logout',views.logout,name="logout"),
 ]
