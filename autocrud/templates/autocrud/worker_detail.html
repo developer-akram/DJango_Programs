@@ -9,11 +9,14 @@
 </head>
 
 <body>
-    <form method="post">
-        {% csrf_token %}
-        <p>Are you sure you want to delete "{{ object.jobtitle }}"?</p>
-        <input type="submit" value="Confirm">
-    </form>
+    <div>
+        <h1>{{ object.name }}</h1>
+        <strong>
+            <p>Gender : {{ object.gender }}</p>
+            <p>Mobile no : {{ object.mobile }}</p>
+            <p>Email ID : {{ object.email }}</p>
+        </strong>
+    </div>
 </body>
 
 </html>

@@ -45,4 +45,5 @@ urlpatterns = [
     path('classView/', include('classView.urls')),
     path('allclassview/', include('allclassview.urls')),
     path('addapp/', include('addapp.urls')),
+    path('autocrud/', include('autocrud.urls')),
 ]

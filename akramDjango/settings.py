@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'polls','feedback','check',
     'cookies','cookiesNew','cookiesOld',
     'classView','allclassview','addapp',
+    'autocrud',
 ]
 
 MIDDLEWARE = [

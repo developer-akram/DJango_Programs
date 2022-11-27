@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        {% for i in object_list %}
+        <h2>{{ i.name }}</h2>
+        <li>Unique ID : {{ i.id }}</li>
+        <li>Name : {{ i.name }}</li>
+        <li>Gender : {{ i.gender }}</li>
+        <li>Mobile no : {{ i.mobile }}</li>
+        <li>Email ID : {{ i.email }}</li><br>
+        <li><a href="/autocrud/{{ i.id }}">Detail</a>
+            &emsp;&emsp;&emsp;
+            <a href="/autocrud/{{ i.id }}/empupdate">Update</a>
+            &emsp;&emsp;&emsp;
+            <a href="/autocrud/{{ i.id }}/empdelete">Delete</a>
+        </li><br>
+        <hr>
+        {% empty %}
+        <li>No Objects Has been Created</li>
+        {% endfor %}
+        <li><a href="/autocrud">Create new Object</a></li>
+        <hr>
+    </div>
+</body>
+</html>
