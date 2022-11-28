@@ -1,32 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div>
-        {% for i in object_list %}
-        <h2>{{ i.name }}</h2>
-        <li>Unique ID : {{ i.id }}</li>
-        <li>Name : {{ i.name }}</li>
-        <li>Gender : {{ i.gender }}</li>
-        <li>Mobile no : {{ i.mobile }}</li>
-        <li>Email ID : {{ i.email }}</li><br>
-        <li><a href="/autocrud/{{ i.id }}">Detail</a>
-            &emsp;&emsp;&emsp;
-            <a href="/autocrud/{{ i.id }}/empupdate">Update</a>
-            &emsp;&emsp;&emsp;
-            <a href="/autocrud/{{ i.id }}/empdelete">Delete</a>
-        </li><br>
-        <hr>
-        {% empty %}
-        <li>No Objects Has been Created</li>
-        {% endfor %}
-        <li><a href="/autocrud">Create new Object</a></li>
-        <hr>
+{% extends 'autocrud/design.html' %}
+{% block middle %}
+<div class="container pt-5 pb-5">
+    {% for i in object_list %}
+    <div class="row bg-info rounded justify-content-between">
+        <div class="col-md-5 h1">{{ i.name }}</div>
+        <div class="col-md-5 text-end h1">Unique ID : {{ i.id }}</div>
     </div>
-</body>
-</html>
+    <div class="row pt-1 pb-1 fw-bold rounded mb-5"
+        style="background-image:linear-gradient(to right bottom, rgb(199, 255, 199),rgb(255, 206, 206),rgb(205, 205, 251)) ;">
+        <div class="col-12">Name : {{ i.name }}</div>
+        <div class="col-12 ">Gender : {{ i.gender }}</div>
+        <div class="col-12 ">Mobile no : {{ i.mobile }}</div>
+        <div class="col-12 ">Email ID : {{ i.email }}</div><br>
+        <div class="col-12"><a class="btn btn-primary me-3" href="/autocrud/{{ i.id }}">Detail</a>
+            <a class="btn btn-warning me-3" href="/autocrud/{{ i.id }}/empupdate">Update</a>
+            <a class="btn btn-danger" href="/autocrud/{{ i.id }}/empdelete">Delete</a>
+        </div>
+    </div>
+    {% empty %}
+    <div class="row">
+        <div class="col-12 p-2 text-center display-6 fw-bold bg-danger text-white rounded-pill">No Objects Has been
+            Created
+        </div>
+    </div>
+    {% endfor %}
+    <div class="row mt-5 justify-content-center">
+        <a class="btn btn-lg btn-outline-success col-8" href="/autocrud">Create new Employee Object</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,27 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    <form action="" method="post">
+{% extends 'autocrud/design.html' %}
+{% block middle %}
+<div class="container pt-5 pb-5">
+    <form action="" method="post" class="row">
         {% csrf_token %}
-        <center>
-            <h1>Do u want to delete all data of {{ object.name }}?</h1>
-            <strong>
-                <p>Gender : {{ object.gender }}</p>
-                <p>Mobile no : {{ object.mobile }}</p>
-                <p>Email ID : {{ object.email }}</p>
-            </strong>
-            <input type="submit" value="Delete Permanently">
-        </center>
+        <div class="col-12 display-6 fw-bold pt-3 pb-3 mb-4 rounded bg-danger text-white text-center">
+            Do u want to delete all data of {{ object.name }}?
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-8 mb-2 text-center bg-secondary rounded-pill fs-4 text-white">Name : {{ object.name }}</div>
+            <div class="col-md-8 text-center rounded-pill mb-2 fs-4 bg-info">Gender : {{ object.gender }}</div>
+            <div class="col-md-8 text-center fs-4 bg-success mb-2 rounded-pill text-white">Mobile no : {{ object.mobile }}</div>
+            <div class="col-md-8 text-center fs-4 rounded-pill bg-warning">Email ID : {{ object.email }}</div>
+        </div>
+        <div class="d-grid gap-2 mt-4 col-6 mx-auto">
+            <input class="btn btn-outline-danger btn-lg" type="submit" value="DELETE PERMANENTLY">
+        </div>
     </form>
-
-</body>
-
-</html>
+</div>
+{% endblock %}
